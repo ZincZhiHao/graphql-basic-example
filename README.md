@@ -1,4 +1,4 @@
-![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/6cb1cf11-4ead-4e7a-b7ae-79dbaa9d3b6e)# graphql-basic-example
+# graphql-basic-example
 This is for graphql with basic examples - Made by Ho Zhi Hao
 
 # Installation Steps: 
