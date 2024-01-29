@@ -53,15 +53,21 @@ Replace the default scripts entry in package.json file with the following entrie
    
 Defining Schema, Dataset, and resolver
 1. Import the following packages/modules:
+
   import { ApolloServer } from '@apollo/server';
+  
   import { startStandaloneServer } from '@apollo/server/standalone';
+  
   import mongoose from 'mongoose';
 
 3. Define your schema and models
+   
   // MongoDB connection
+
   mongoose.connect("mongodb+srv://admin:admin@graphql.4oadkqc.mongodb.net/");
   
   // Define Mongoose schemas and models
+  
   const { Schema } = mongoose;
   
   const authorSchema = new Schema({
@@ -78,6 +84,7 @@ Defining Schema, Dataset, and resolver
   const Book = mongoose.model('Book', bookSchema);
   
   // GraphQL type definitions
+  
   const typeDefs = `
     type Book {
       title: String
@@ -106,6 +113,7 @@ Defining Schema, Dataset, and resolver
   `;
   
   // GraphQL resolvers
+  
   const resolvers = {
     Query: {
       
@@ -151,10 +159,13 @@ Defining Schema, Dataset, and resolver
 ***Step 4***
 
 Create an instance of ApolloServer
+
 // Create an Apollo Server instance
+
 const server = new ApolloServer<any>({ typeDefs, resolvers });
 
 // Start the server
+
 const { url } = await startStandaloneServer(server, {
   listen: { port: 4000 },
 });
