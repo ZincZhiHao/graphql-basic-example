@@ -54,121 +54,34 @@ Replace the default scripts entry in package.json file with the following entrie
 Defining Schema, Dataset, and resolver
 1. Import the following packages/modules:
 
-  import { ApolloServer } from '@apollo/server';
-  
-  import { startStandaloneServer } from '@apollo/server/standalone';
-  
-  import mongoose from 'mongoose';
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/d42d5cfd-dbde-4984-87db-4546c82fa390)
 
-3. Define your schema and models
+
+2. Define your schema and models
    
   // MongoDB connection
 
-  mongoose.connect("mongodb+srv://admin:admin@graphql.4oadkqc.mongodb.net/");
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/74757d69-5692-4771-9b3f-e8ee6bb7a481)
+
   
   // Define Mongoose schemas and models
   
-  const { Schema } = mongoose;
-  
-  const authorSchema = new Schema({
-    name: String,
-  });
-  
-  const Author = mongoose.model('Author', authorSchema);
-  
-  const bookSchema = new Schema({
-    title: String,
-    author: { type: Schema.Types.ObjectId, ref: 'Author' },
-  });
-  
-  const Book = mongoose.model('Book', bookSchema);
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/e5936e67-f4cf-4b1e-a84c-a3fe535a7d79)
+
   
   // GraphQL type definitions
   
-  const typeDefs = `
-    type Book {
-      title: String
-      author: Author
-    }
-  
-    type Author {
-      name: String
-    }
-  
-    type Query {
-      books: [Book]
-      authors: [Author]
-    }
-    
-    type Mutation {
-      createAuthor(name: String!): Author
-      createBook(title: String!, authorName: String!): Book
-      deleteBook(title: String!): String
-      deleteAuthor(name: String!): String
-      editBookTitle(currentTitle: String!, newTitle: String!): Book
-      editAuthorName(currentName: String!, newName: String!): Author
-    }
-    
-    
-  `;
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/de8951ad-e26b-4297-ab42-7284fc3a3481)
+
   
   // GraphQL resolvers
   
-  const resolvers = {
-    Query: {
-      
-      authors: async () => {
-        return await Author.find().populate('name');
-      },
-    },
-    Mutation: {
-      createAuthor: async (_, { name }) => {
-        // Check for duplicate author
-        const existingAuthor = await Author.findOne({ name: name });
-        if (existingAuthor) {
-          throw new Error('An author with the same name already exists');
-        } else {
-          const newAuthor = new Author({ name: name });
-          await newAuthor.save();
-          return newAuthor;
-        }
-      },
-      
-      deleteAuthor: async (_, { name }) => {
-        const deletedAuthor = await Author.findOneAndDelete({ name: name });
-        if (deletedAuthor) {
-          return `The author "${name}" has been deleted`;
-        } else {
-          throw new Error(`The author "${name}" was not found`);
-        }
-      },
-      
-      editAuthorName: async (_, { currentName, newName }) => {
-        const author = await Author.findOne({ name: currentName });
-        if (!author) {
-          throw new Error(`The Author "${currentName}" was not found`);
-        } else {
-          author.name = newName;
-          await author.save();
-          return author;
-        }
-      },
-    },
-  };
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/b15d47c0-7396-435b-88ef-0f6afd2f8a20)
+
 
 ***Step 4***
 
 Create an instance of ApolloServer
 
-// Create an Apollo Server instance
-
-const server = new ApolloServer<any>({ typeDefs, resolvers });
-
-// Start the server
-
-const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
-});
-
-console.log(`🚀  Server ready at: ${url}`);
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/6d56acae-0a6a-483e-b2b6-60bb2abb51bb)
 
