@@ -20,17 +20,23 @@ Intialize a new Node.js project with npm:
 ***Step 2:***
 
 Install dependencies:
+
 1. npm install @apollo/server graphql
    
 Create a src directory with index.ts file to contain all of the code:
+
 3. mkdir src
+
 4. touch src/index.ts or just open the file from vsc
    
 Run the following command to install the typescript and @types/node packages into the project's dev dependencies
+
 5. npm install --save-dev typescript @types/node
 
 Create a tsconfig.json file and add the following configuration to the file:
+
 6. touch tsconfig.json
+
 7. Configurations: 
   {
     "compilerOptions": {
