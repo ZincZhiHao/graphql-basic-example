@@ -38,7 +38,8 @@ Create a tsconfig.json file and add the following configuration to the file:
 
 6. touch tsconfig.json
 
-7. Configurations: 
+7. Configurations:
+   
   {
     "compilerOptions": {
       "rootDirs": ["src"],
