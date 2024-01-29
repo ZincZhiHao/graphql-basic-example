@@ -56,6 +56,7 @@ Replace the default scripts entry in package.json file with the following entrie
     }
     // other dependencies
   }
+
 ***Step 3:***
    
 Defining Schema, Dataset, and resolver
