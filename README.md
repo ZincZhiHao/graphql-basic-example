@@ -1,4 +1,4 @@
-# graphql-basic-example
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/6cb1cf11-4ead-4e7a-b7ae-79dbaa9d3b6e)# graphql-basic-example
 This is for graphql with basic examples - Made by Ho Zhi Hao
 
 # Installation Steps: 
@@ -40,30 +40,14 @@ Create a tsconfig.json file and add the following configuration to the file:
 
 7. Configurations:
    
-  {
-    "compilerOptions": {
-      "rootDirs": ["src"],
-      "outDir": "dist",
-      "lib": ["es2020"],
-      "target": "es2020",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "types": ["node"]
-    }
-  }
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/f21bb922-5821-44cf-86cb-e8092f19b650)
+
 
 Replace the default scripts entry in package.json file with the following entries:
 1. Configuration Entries:
-  {
-    // ...etc.
-    "type": "module",
-    "scripts": {
-      "compile": "tsc",
-      "start": "npm run compile && node ./dist/index.js"
-    }
-    // other dependencies
-  }
+
+  ![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/305e7e28-60db-4d8d-ab72-f02861876255)
+
 
 ***Step 3:***
    
