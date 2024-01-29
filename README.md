@@ -5,6 +5,7 @@ This is for graphql with basic examples - Made by Ho Zhi Hao
 ***Step 1:***
 
 npm install @apollo/server graphql -> to install for apollo server and graphQL
+
 npm install mongoose mongodb -> Set up mongodb packages and mongoose
 
 # Creating a simple project with Apollo Server
