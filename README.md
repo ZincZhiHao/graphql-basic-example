@@ -85,5 +85,12 @@ Create an instance of ApolloServer
 
 ![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/6d56acae-0a6a-483e-b2b6-60bb2abb51bb)
 
-#Running the server
+# Running the server
+
 Command: npm start
+
+
+# Querying on Apollo Server
+
+![image](https://github.com/ZincZhiHao/graphql-basic-example/assets/146707942/c0cbc792-1ebd-4348-a9ac-66bb293945e3)
+
